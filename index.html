@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>document.documentElement.classList.add('js');</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lowell Pepple — Equity Research &amp; Investment Notes</title>
+<meta name="description" content="Independent equity research and investment notes by Lowell Pepple — long-form write-ups on public and private companies, focused on durable economics and a price worth paying.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Libre+Franklin:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --paper:#F6F4EF;
+    --paper-raised:#FCFBF8;
+    --ink:#1B1A18;
+    --ink-soft:#55504B;
+    --ink-faint:#8B857D;
+    --line:#E4E0D7;
+    --line-strong:#D5CFC4;
+    --oxblood:#7C2233;
+    --oxblood-deep:#5F1926;
+    --oxblood-wash:#EFE4E4;
+
+    --serif:"Newsreader",Georgia,"Times New Roman",serif;
+    --sans:"Libre Franklin",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+
+    --step--1:clamp(0.78rem,0.75rem + 0.15vw,0.86rem);
+    --step-0:clamp(1rem,0.96rem + 0.2vw,1.12rem);
+    --step-1:clamp(1.2rem,1.12rem + 0.4vw,1.45rem);
+    --step-2:clamp(1.5rem,1.35rem + 0.75vw,2rem);
+    --step-3:clamp(2rem,1.7rem + 1.5vw,3rem);
+    --step-4:clamp(2.9rem,2.2rem + 3.4vw,5.2rem);
+
+    --mx:clamp(1.15rem,4vw,3.5rem);
+    --maxw:74rem;
+    --readw:38rem;
+
+    --dur:.5s;
+    --ease:cubic-bezier(.2,.6,.2,1);
+  }
+
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:var(--serif);font-size:var(--step-0);line-height:1.65;
+    font-optical-sizing:auto;-webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *{animation-duration:.001ms!important;transition-duration:.001ms!important}
+  }
+
+  a{color:var(--oxblood);text-decoration:none}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--oxblood);outline-offset:3px;border-radius:2px}
+
+  .skip{position:absolute;left:-999px;top:0;background:var(--ink);color:var(--paper);padding:.6rem 1rem;z-index:200;font-family:var(--sans);font-size:.85rem}
+  .skip:focus{left:.6rem;top:.6rem}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--mx)}
+
+  /* eyebrow / structural label */
+  .eyebrow{
+    font-family:var(--mono);font-size:var(--step--1);
+    letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);
+    display:inline-flex;align-items:center;gap:.6em;margin:0 0 1.1rem;
+  }
+  .eyebrow::before{content:"";width:.42rem;height:.42rem;background:var(--oxblood);display:inline-block;transform:translateY(-.05em)}
+
+  /* ---------- nav ---------- */
+  .nav{position:sticky;top:0;z-index:100;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav__inner{max-width:var(--maxw);margin:0 auto;padding:.85rem var(--mx);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+  .brand{display:flex;align-items:baseline;gap:.55rem;font-family:var(--serif);font-weight:600;font-size:1.06rem;color:var(--ink);letter-spacing:.01em;white-space:nowrap}
+  .brand__mark{font-family:var(--mono);font-weight:500;font-size:.72rem;letter-spacing:.05em;color:var(--paper);background:var(--oxblood);padding:.28em .5em;border-radius:2px;transform:translateY(-.12em)}
+  .brand__tag{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);border-left:1px solid var(--line-strong);padding-left:.6rem;margin-left:.1rem}
+  .nav__links{display:flex;gap:1.4rem;font-family:var(--sans);font-size:.83rem;letter-spacing:.02em}
+  .nav__links a{color:var(--ink-soft);position:relative;padding-bottom:2px}
+  .nav__links a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1.5px;background:var(--oxblood);transition:right var(--dur) var(--ease)}
+  .nav__links a:hover{color:var(--ink)}
+  .nav__links a:hover::after{right:0}
+
+  section{scroll-margin-top:4.5rem}
+
+  /* ---------- hero / masthead ---------- */
+  .hero{padding:clamp(3.2rem,8vw,6.5rem) 0 clamp(2.4rem,5vw,4rem)}
+  .dateline{display:flex;justify-content:space-between;gap:1rem;font-family:var(--mono);font-size:var(--step--1);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);border-top:1.5px solid var(--ink);border-bottom:1px solid var(--line);padding:.6rem 0;margin-bottom:clamp(1.8rem,4vw,3rem)}
+  .masthead{font-weight:500;font-size:var(--step-4);line-height:.98;letter-spacing:-.02em;margin:0}
+  .masthead em{font-style:italic;color:var(--oxblood)}
+  .tagline{font-family:var(--sans);font-weight:600;font-size:var(--step--1);letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);margin:1.4rem 0 0}
+  .lede{max-width:var(--readw);margin:1.8rem 0 0;font-size:var(--step-1);line-height:1.55;color:var(--ink-soft)}
+  .lede strong{color:var(--ink);font-weight:600}
+  .stats{display:flex;flex-wrap:wrap;gap:.6rem 1.6rem;margin:2.2rem 0 0;font-family:var(--mono);font-size:var(--step--1);letter-spacing:.04em;color:var(--ink-faint)}
+  .stats b{color:var(--oxblood);font-weight:500}
+
+  /* ---------- generic section head ---------- */
+  .band{padding:clamp(2.8rem,6vw,5rem) 0;border-top:1px solid var(--line)}
+  .band__head{margin-bottom:clamp(1.8rem,4vw,2.8rem)}
+  .band__title{font-weight:500;font-size:var(--step-3);line-height:1.08;letter-spacing:-.015em;margin:0}
+  .band__sub{max-width:var(--readw);margin:.9rem 0 0;color:var(--ink-soft);font-size:var(--step-0)}
+
+  /* ---------- notes ---------- */
+  .note{background:var(--paper-raised);border:1px solid var(--line-strong);border-radius:6px;padding:clamp(1.4rem,3.5vw,2.4rem);transition:border-color var(--dur) var(--ease),box-shadow var(--dur) var(--ease),transform var(--dur) var(--ease)}
+  .note + .note{margin-top:1.4rem}
+  .note:hover{border-color:var(--oxblood);box-shadow:0 14px 40px -22px rgba(95,25,38,.5);transform:translateY(-3px)}
+  .note__top{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:space-between;align-items:center;margin-bottom:1.1rem}
+  .note__sector{font-family:var(--mono);font-size:var(--step--1);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint)}
+  .pill{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;padding:.34em .7em;border-radius:100px;border:1px solid currentColor;white-space:nowrap}
+  .pill--wip{color:var(--oxblood)}
+  .pill--live{color:#1f6b45}
+  .note__name{font-weight:500;font-size:var(--step-2);letter-spacing:-.01em;margin:0}
+  .note__thesis{font-style:italic;font-size:var(--step-1);color:var(--ink-soft);margin:.5rem 0 0;max-width:44ch}
+  .note__body{margin:1rem 0 0;color:var(--ink-soft);max-width:54ch}
+  .note__foot{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.5rem;padding-top:1.3rem;border-top:1px solid var(--line)}
+  .doc{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--sans);font-size:.82rem;font-weight:500;padding:.6em 1em;border-radius:4px;border:1px solid var(--line-strong);color:var(--ink-soft);background:transparent;transition:all var(--dur) var(--ease)}
+  .doc[aria-disabled="true"]{opacity:.62;cursor:not-allowed}
+  a.doc:hover{border-color:var(--oxblood);color:var(--oxblood);background:var(--oxblood-wash)}
+  .doc__soon{font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);border:1px solid var(--line-strong);border-radius:100px;padding:.15em .5em}
+
+  /* ---------- coverage universe ---------- */
+  .uni{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(15.5rem,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+  .uni__item{background:var(--paper);padding:1.15rem 1.25rem;transition:background var(--dur) var(--ease)}
+  .uni__item:hover{background:var(--paper-raised)}
+  .uni__tkr{font-family:var(--mono);font-size:.74rem;font-weight:500;letter-spacing:.06em;color:var(--oxblood)}
+  .uni__co{font-weight:600;font-size:var(--step-0);margin:.25rem 0 .15rem}
+  .uni__angle{font-family:var(--sans);font-size:.78rem;line-height:1.4;color:var(--ink-faint)}
+  .uni__note{margin:1.1rem 0 0;font-family:var(--mono);font-size:var(--step--1);letter-spacing:.03em;color:var(--ink-faint)}
+
+  /* ---------- about ---------- */
+  .about__grid{display:grid;grid-template-columns:1fr;gap:2.4rem}
+  @media (min-width:52rem){.about__grid{grid-template-columns:1.6fr 1fr}}
+  .prose p{max-width:var(--readw);color:var(--ink-soft)}
+  .prose p + p{margin-top:1.1rem}
+  .facts{border-top:1.5px solid var(--ink);align-self:start}
+  .facts dl{margin:0}
+  .facts div{display:flex;justify-content:space-between;gap:1rem;padding:.85rem 0;border-bottom:1px solid var(--line)}
+  .facts dt{font-family:var(--mono);font-size:var(--step--1);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint)}
+  .facts dd{margin:0;text-align:right;font-size:.95rem;color:var(--ink)}
+
+  /* ---------- contact ---------- */
+  .contact__row{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.6rem}
+  .btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--sans);font-weight:600;font-size:.86rem;letter-spacing:.01em;padding:.8em 1.3em;border-radius:4px;transition:all var(--dur) var(--ease)}
+  .btn--solid{background:var(--oxblood);color:var(--paper);border:1px solid var(--oxblood)}
+  .btn--solid:hover{background:var(--oxblood-deep);border-color:var(--oxblood-deep)}
+  .btn--ghost{border:1px solid var(--line-strong);color:var(--ink)}
+  .btn--ghost:hover{border-color:var(--ink)}
+
+  /* ---------- footer ---------- */
+  .foot{border-top:1px solid var(--line);padding:2.4rem 0 3rem;margin-top:1rem}
+  .foot__inner{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;font-family:var(--mono);font-size:var(--step--1);letter-spacing:.04em;color:var(--ink-faint)}
+  .foot__inner a{color:var(--ink-soft)}
+  .disclaim{max-width:var(--readw);margin:1.3rem 0 0;font-family:var(--sans);font-size:.74rem;line-height:1.5;color:var(--ink-faint)}
+
+  /* ---------- reveal ---------- */
+  .js .reveal{opacity:0;transform:translateY(14px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+  .js .reveal.is-in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none}}
+
+  @media (max-width:34rem){
+    .brand__tag{display:none}
+    .nav__links{gap:1rem}
+    .dateline{flex-direction:column;gap:.3rem}
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="nav__inner">
+    <div class="brand">
+      <span class="brand__mark">LP</span>
+      <span>Lowell Pepple</span>
+      <span class="brand__tag">Equity Research</span>
+    </div>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#notes">Notes</a>
+      <a href="#coverage">Coverage</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO / MASTHEAD ============ -->
+  <section class="hero">
+    <div class="wrap">
+      <h1 class="masthead reveal">Lowell Pepple</h1>
+      <p class="tagline reveal">Investment research &amp; company analysis</p>
+      <p class="lede reveal">I&rsquo;m a finance student interested in what makes a company valuable. This is where I write up businesses I&rsquo;ve been researching &mdash; the business model, the numbers, and whether the stock looks worth owning. It&rsquo;s a personal project, and a work in progress.</p>
+    </div>
+  </section>
+
+  <!-- ============ NOTES ============ -->
+  <section class="band" id="notes">
+    <div class="wrap">
+      <div class="band__head reveal">
+        <p class="eyebrow">Research Notes</p>
+        <h2 class="band__title">Long-form write-ups</h2>
+        <p class="band__sub">Each note lays out the business, its unit economics, the risks I&rsquo;d underwrite, and a view on valuation. Full memos and models are linked as they&rsquo;re finished.</p>
+      </div>
+
+      <!-- To add a note: copy one <article class="note"> block, edit the fields, drop your PDF/XLSX in the repo, and point the hrefs at them. -->
+      <article class="note reveal">
+        <div class="note__top">
+          <span class="note__sector">Restaurants &middot; Fast Casual</span>
+          <span class="pill pill--wip">In progress</span>
+        </div>
+        <h3 class="note__name">Torchy&rsquo;s Tacos</h3>
+        <p class="note__thesis">Can a cult taco brand compound into the next great fast-casual franchise?</p>
+        <p class="note__body">A ground-up look at Torchy&rsquo;s: average unit volumes and store-level margins, how much white space is left for new units, franchise vs. company-owned economics, and what a restaurant-focused sponsor might reasonably pay for it.</p>
+        <div class="note__foot">
+          <span class="doc" aria-disabled="true">Read the note (PDF) <span class="doc__soon">Soon</span></span>
+          <span class="doc" aria-disabled="true">View the model (XLSX) <span class="doc__soon">Soon</span></span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ COVERAGE UNIVERSE ============ -->
+  <section class="band" id="coverage">
+    <div class="wrap">
+      <div class="band__head reveal">
+        <p class="eyebrow">Coverage Universe</p>
+        <h2 class="band__title">Names I&rsquo;m tracking</h2>
+        <p class="band__sub">The watchlist behind the notes &mdash; businesses I find interesting and am working toward writing up. Tickers are where I&rsquo;m building the analysis now.</p>
+      </div>
+
+      <!-- Add a name: copy one <li class="uni__item"> block and edit ticker / company / angle. -->
+      <ul class="uni reveal">
+        <li class="uni__item"><div class="uni__tkr">HEI</div><div class="uni__co">HEICO</div><div class="uni__angle">Aerospace aftermarket compounder with a founder-family playbook.</div></li>
+        <li class="uni__item"><div class="uni__tkr">CPRT</div><div class="uni__co">Copart</div><div class="uni__angle">Two-sided salvage auction marketplace with a widening moat.</div></li>
+        <li class="uni__item"><div class="uni__tkr">POOL</div><div class="uni__co">Pool Corp</div><div class="uni__angle">Boring-is-beautiful distribution with pricing power.</div></li>
+        <li class="uni__item"><div class="uni__tkr">WING</div><div class="uni__co">Wingstop</div><div class="uni__angle">Asset-light franchising and best-in-class unit returns.</div></li>
+        <li class="uni__item"><div class="uni__tkr">CSU</div><div class="uni__co">Constellation Software</div><div class="uni__angle">Serial acquirer of vertical-market software.</div></li>
+        <li class="uni__item"><div class="uni__tkr">RACE</div><div class="uni__co">Ferrari</div><div class="uni__angle">Scarcity as a business model &mdash; luxury pricing power.</div></li>
+        <li class="uni__item"><div class="uni__tkr">BROS</div><div class="uni__co">Dutch Bros</div><div class="uni__angle">Drive-thru coffee and the math of a national rollout.</div></li>
+        <li class="uni__item"><div class="uni__tkr">SG</div><div class="uni__co">Sweetgreen</div><div class="uni__angle">Fast-casual growth story with an unproven margin question.</div></li>
+        <li class="uni__item"><div class="uni__tkr">CELH</div><div class="uni__co">Celsius</div><div class="uni__angle">Energy-drink brand riding distribution and shelf gains.</div></li>
+        <li class="uni__item"><div class="uni__tkr">PLNT</div><div class="uni__co">Planet Fitness</div><div class="uni__angle">Franchised fitness and the high-volume, low-price model.</div></li>
+      </ul>
+      <p class="uni__note">Torchy&rsquo;s Tacos is covered as a private name in Notes above.</p>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="band" id="about">
+    <div class="wrap">
+      <div class="band__head reveal">
+        <p class="eyebrow">About</p>
+        <h2 class="band__title">Who&rsquo;s writing this</h2>
+      </div>
+      <div class="about__grid reveal">
+        <div class="prose">
+          <p>I&rsquo;m Lowell Pepple, a finance student transferring into the USC Marshall School of Business. I&rsquo;m focused on a path into investment banking and, longer term, private equity &mdash; and this site is where I do the reps that classes don&rsquo;t require.</p>
+          <p>Before Marshall I worked at a law firm and spent time around M&amp;A advisory, which is where I first got interested in how deals actually come together. What holds my attention now is a narrower question: what makes a business genuinely <em>durable</em> &mdash; the kind you&rsquo;d want to own for a decade, not rent for a quarter.</p>
+          <p>Every note here is my own work, built from public information. I&rsquo;m early in this, the analysis will sharpen over time, and I&rsquo;d welcome a sharp pushback on anything I&rsquo;ve gotten wrong.</p>
+        </div>
+        <div class="facts">
+          <dl>
+            <div><dt>Focus</dt><dd>IB &rarr; Private Equity</dd></div>
+            <div><dt>School</dt><dd>USC Marshall</dd></div>
+            <div><dt>Interests</dt><dd>Consumer, compounders, distribution</dd></div>
+            <div><dt>Toolkit</dt><dd>Excel modeling, valuation, LBOs</dd></div>
+            <div><dt>Based</dt><dd>Los Angeles, CA</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="band" id="contact">
+    <div class="wrap">
+      <div class="band__head reveal">
+        <p class="eyebrow">Contact</p>
+        <h2 class="band__title">Get in touch</h2>
+        <p class="band__sub">Happy to talk markets, trade notes, or send along a full memo. The fastest way to reach me is email.</p>
+      </div>
+      <!-- EDIT THESE: replace the email, LinkedIn URL, and résumé link with your own. -->
+      <div class="contact__row reveal">
+        <a class="btn btn--solid" href="mailto:you@example.com">Email me</a>
+        <a class="btn btn--ghost" href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn btn--ghost" href="#" >Résumé (PDF)</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__inner">
+      <span>&copy; 2026 Lowell Pepple</span>
+      <span><a href="#main">Back to top &uarr;</a></span>
+    </div>
+    <p class="disclaim">Everything on this site reflects my personal views for research and educational purposes only. It is not investment advice, not a recommendation to buy or sell any security, and not affiliated with any employer or firm. I may be wrong; do your own work.</p>
+  </div>
+</footer>
+
+<script>
+  // Subtle scroll reveal — progressive enhancement only.
+  (function(){
+    var els = document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches){
+      els.forEach(function(el){el.classList.add('is-in');});
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('is-in'); io.unobserve(e.target); }
+      });
+    },{rootMargin:'0px 0px -8% 0px',threshold:.12});
+    els.forEach(function(el){io.observe(el);});
+  })();
+</script>
+</body>
+</html>
